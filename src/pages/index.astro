@@ -1,8 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const title = "Lopez Professional Services - Home";
+const description = "Lopez Professional Services offers quality painting, remodeling, and more. Trusted craftsmanship you can rely on.";
 ---
 
-<Layout title="Lopez Professional Services">
+<Layout title={title}>
+    <head>
+        <meta name="description" content={description} />
+        <meta name="keywords" content="Painting, Remodeling, Home Improvement, Professional Services" />
+    </head>
+
     <!-- Hero Section -->
     <section class="hero bg-cover bg-center h-64 sm:h-80 md:h-96 lg:h-128" style="background-image: url('https://source.unsplash.com/random/1600x900?house');">
         <div class="container mx-auto h-full flex justify-center items-center">
@@ -13,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- Introduction -->
     <section class="intro p-8">
         <div class="container mx-auto">
-            <h2 class="text-2xl mb-4">Welcome to Lopez Professional Services</h2>
+            <h2 class="text-2xl font-bold sm:text-3xl">Welcome to Lopez Professional Services</h2>
             <p>We offer a range of services including painting, remodeling, and more. Our team of professionals is dedicated to delivering top-notch craftsmanship and exceptional customer service.</p>
         </div>
     </section>
@@ -21,18 +29,18 @@ import Layout from '../layouts/Layout.astro';
     <!-- Services Overview -->
     <section class="services p-8 bg-gray-200">
         <div class="container mx-auto">
-            <h2 class="text-2xl mb-4">Our Services</h2>
+            <h2 class="text-2xl font-bold sm:text-3xl mb-4">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <a href="/services" class="service-card p-4 bg-white shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl mb-2">Painting</h3>
+                    <h3 class="text-xl font-bold sm:text-2xl mb-2">Painting</h3>
                     <p>High-quality interior and exterior painting services.</p>
                 </a>
                 <a href="/services" class="service-card p-4 bg-white shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl mb-2">Remodeling</h3>
+                    <h3 class="text-xl font-bold sm:text-2xl mb-2">Remodeling</h3>
                     <p>Expert remodeling services to transform your space.</p>
                 </a>
                 <a href="/services" class="service-card p-4 bg-white shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl mb-2">More Services</h3>
+                    <h3 class="text-xl font-bold sm:text-2xl mb-2">More Services</h3>
                     <p>Explore our full range of professional services.</p>
                 </a>
             </div>
