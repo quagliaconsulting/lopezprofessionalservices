@@ -20,19 +20,21 @@ const { title } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <title>{title}</title>
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interFont400} crossorigin />
         <link rel="preload" as="font" type="font/woff2" href={interFont800} crossorigin />
     </head>
-    <body class="antialiased text-white" style="background-image: url('https://source.unsplash.com/random/1600x900?house'); background-size: cover; background-position: center; scroll-behavior: smooth;">
+    <body class="antialiased text-white" style="background-image: url('https://source.unsplash.com/random/1600x900?house'); background-size: cover; background-position: center;">
         <div class="min-h-screen flex flex-col">
-            <div class="flex flex-col w-full max-w-5xl mx-auto grow">
-                <Header />
-                <main class="grow"><slot /></main>
-                <Footer />
+            <Header />
+            <div class="flex flex-col grow">
+                <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl"> <!-- Updated max-width -->
+                    <slot />
+                </main>
             </div>
+            <Footer />
         </div>
     </body>
 </html>

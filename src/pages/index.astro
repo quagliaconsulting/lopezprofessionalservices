@@ -13,37 +13,45 @@ const description = "Lopez Professional Services offers quality painting, remode
     </head>
 
     <!-- Hero Section -->
-    <section class="hero bg-cover bg-center h-64 sm:h-80 md:h-96 lg:h-128 relative" style="background-image: url('https://source.unsplash.com/random/1600x900?house');">
+    <section class="hero bg-cover bg-center h-auto relative" style="background-image: url('https://source.unsplash.com/random/1600x900?house');">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
-        <div class="container mx-auto h-full flex justify-center items-center relative">
-            <h1 class="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">Lopez Professional Services</h1>
-            <h2 class="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Quality Craftsmanship You Can Trust</h2>
-            <p class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4">We provide professional painting, remodeling, and more. Trusted craftsmanship you can rely on.</p>
+        <div class="container mx-auto h-full flex flex-col justify-center items-center relative py-8">
+            <h2 class="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center mb-8">
+                <span>Quality</span><br />
+                <span>Craftsmanship</span><br />
+                <span>You Can Trust</span>
+            </h2>
+            <div class="text-white text-center max-w-2xl">
+                <h2 class="text-2xl font-bold sm:text-3xl mb-4">Welcome to Lopez Professional Services</h2>
+                <p>We offer a range of services including painting, remodeling, and more. Our team of professionals is dedicated to delivering top-notch craftsmanship and exceptional customer service.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Introduction -->
+    <!-- Introduction (Empty) -->
     <section class="intro p-8">
         <div class="container mx-auto">
+            <!-- Placeholder for future content -->
         </div>
     </section>
 
     <!-- Services Overview -->
-    <section class="services p-8 bg-gray-200">
-        <div class="container mx-auto">
-            <h2 class="text-2xl font-bold sm:text-3xl mb-4">Our Services</h2>
+    <section class="services p-8 bg-gray-200 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-2xl font-bold sm:text-3xl mb-4 text-white">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <a href="/services" class="service-card p-4 bg-white shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-bold sm:text-2xl mb-2">Painting</h3>
-                    <p>High-quality interior and exterior painting services.</p>
+                    <h3 class="text-xl font-bold sm:text-2xl mb-2 text-black">Painting</h3>
+                    <p class="text-black">High-quality interior and exterior painting services.</p>
                 </a>
                 <a href="/services" class="service-card p-4 bg-white shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-bold sm:text-2xl mb-2">Remodeling</h3>
-                    <p>Expert remodeling services to transform your space.</p>
+                    <h3 class="text-xl font-bold sm:text-2xl mb-2 text-black">Remodeling</h3>
+                    <p class="text-black">Expert remodeling services to transform your space.</p>
                 </a>
                 <a href="/services" class="service-card p-4 bg-white shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-bold sm:text-2xl mb-2">More Services</h3>
-                    <p>Explore our full range of professional services.</p>
+                    <h3 class="text-xl font-bold sm:text-2xl mb-2 text-black">More Services</h3>
+                    <p class="text-black">Explore our full range of professional services.</p>
                 </a>
             </div>
         </div>

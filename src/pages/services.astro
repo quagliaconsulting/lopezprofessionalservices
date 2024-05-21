@@ -4,25 +4,41 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Services - Lopez Professional Services">
     <!-- Services -->
-    <section class="services p-8">
-        <div class="container mx-auto">
-            <h2 class="text-2xl mb-4">Our Services</h2>
+    <section class="services p-8 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-3xl font-bold mb-6 text-white">Our Services</h2>
             <div class="service-details mb-8">
-                <h3 class="text-xl mb-2">Painting</h3>
-                <p>We provide high-quality interior and exterior painting services. Our team uses premium materials and techniques to ensure a flawless finish.</p>
+                <h3 class="text-xl mb-2 text-white">Painting</h3>
+                <p class="text-lg text-white">We provide high-quality interior and exterior painting services. Our team uses premium materials and techniques to ensure a flawless finish.</p>
                 <div class="grid grid-cols-2 gap-4">
                     <img src="https://source.unsplash.com/random/400x300?paint" alt="Completed painting project" class="w-full h-auto">
                     <img src="https://source.unsplash.com/random/400x300?home" alt="Interior painting example" class="w-full h-auto">
                 </div>
             </div>
             <div class="service-details mb-8">
-                <h3 class="text-xl mb-2">Remodeling</h3>
-                <p>Our remodeling services are designed to transform your space. Whether you're looking to update a single room or your entire home, we can help.</p>
+                <h3 class="text-xl mb-2 text-white">Remodeling</h3>
+                <p class="text-lg text-white">Our remodeling services are designed to transform your space. Whether you're looking to update a single room or your entire home, we can help.</p>
                 <div class="grid grid-cols-2 gap-4">
                     <img src="https://source.unsplash.com/random/400x300?remodel" alt="Remodeling project" class="w-full h-auto">
                     <img src="https://source.unsplash.com/random/400x300?kitchen" alt="Kitchen remodel example" class="w-full h-auto">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="testimonials p-8 bg-gray-200">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-6">Customer Testimonials</h2>
+            <blockquote class="p-6 bg-white shadow-md mb-6 rounded-md text-black">
+                <p class="text-lg italic">"Lopez Professional Services transformed our home! Their attention to detail is unmatched."</p>
+                <cite class="block mt-4 text-right text-lg font-semibold">— Happy Customer</cite>
+            </blockquote>
+            <blockquote class="p-6 bg-white shadow-md rounded-md text-black">
+                <p class="text-lg italic">"The team was professional, efficient, and delivered exactly what we wanted. Highly recommend!"</p>
+                <cite class="block mt-4 text-right text-lg font-semibold">— Satisfied Client</cite>
+            </blockquote>
         </div>
     </section>
 </Layout>

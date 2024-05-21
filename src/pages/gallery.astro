@@ -4,9 +4,10 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Gallery - Lopez Professional Services">
     <!-- Gallery -->
-    <section class="gallery p-8">
-        <div class="container mx-auto">
-            <h2 class="text-2xl mb-4">Project Photos</h2>
+    <section class="gallery p-8 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-3xl font-bold mb-6 text-white">Project Photos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <img src="https://source.unsplash.com/random/400x300?before" alt="Before project" class="w-full h-auto">
                 <img src="https://source.unsplash.com/random/400x300?after" alt="After project" class="w-full h-auto">
@@ -15,6 +16,21 @@ import Layout from '../layouts/Layout.astro';
                 <img src="https://source.unsplash.com/random/400x300?interior" alt="Interior project" class="w-full h-auto">
                 <img src="https://source.unsplash.com/random/400x300?exterior" alt="Exterior project" class="w-full h-auto">
             </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="testimonials p-8 bg-gray-200">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-6">Customer Testimonials</h2>
+            <blockquote class="p-6 bg-white shadow-md mb-6 rounded-md text-black">
+                <p class="text-lg italic">"Lopez Professional Services transformed our home! Their attention to detail is unmatched."</p>
+                <cite class="block mt-4 text-right text-lg font-semibold">— Happy Customer</cite>
+            </blockquote>
+            <blockquote class="p-6 bg-white shadow-md rounded-md text-black">
+                <p class="text-lg italic">"The team was professional, efficient, and delivered exactly what we wanted. Highly recommend!"</p>
+                <cite class="block mt-4 text-right text-lg font-semibold">— Satisfied Client</cite>
+            </blockquote>
         </div>
     </section>
 </Layout>
