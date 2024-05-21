@@ -13,8 +13,9 @@ const description = "Lopez Professional Services offers quality painting, remode
     </head>
 
     <!-- Hero Section -->
-    <section class="hero bg-cover bg-center h-64 sm:h-80 md:h-96 lg:h-128" style="background-image: url('https://source.unsplash.com/random/1600x900?house');">
-        <div class="container mx-auto h-full flex justify-center items-center">
+    <section class="hero bg-cover bg-center h-64 sm:h-80 md:h-96 lg:h-128 relative" style="background-image: url('https://source.unsplash.com/random/1600x900?house');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
+        <div class="container mx-auto h-full flex justify-center items-center relative">
             <h2 class="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Quality Craftsmanship You Can Trust</h2>
         </div>
     </section>
