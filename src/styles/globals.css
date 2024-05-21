@@ -59,6 +59,6 @@
     background-image: url('/src/assets/painters.jpg'); /* Update to the correct path */
     background-size: cover;
     background-position: center;
-    filter: blur(10px);
+    filter: blur(50px);
     z-index: -1;
 }
