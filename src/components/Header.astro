@@ -11,20 +11,26 @@ const navItems = [
 ];
 ---
 
-<nav class="bg-[#003b6f] bg-opacity-75 text-white p-4 w-full top-0 z-50"> <!-- Added fixed positioning -->
+<nav class="bg-[#003b6f] bg-opacity-75 text-white p-4 w-full top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
         <a href="/" class="flex items-center">
             <Logo />
-            <div class="ml-2 text-4xl font-bold tracking-tight text-left"> <!-- Adjusted text size -->
+            <div class="ml-2 text-2xl md:text-4xl font-bold tracking-tight text-left">
                 <span class="block">Lopez</span>
                 <span class="block">Professional</span>
                 <span class="block">Services</span>
             </div>
         </a>
-        <ul class="flex space-x-6 ml-4"> <!-- Adjusted spacing -->
+        <button id="menu-button" class="md:hidden text-white">
+            <!-- Hamburger icon for mobile -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+        <ul id="nav-menu" class="hidden md:flex space-x-6 ml-4">
             {navItems.map((item) => (
                 <li>
-                    <a href={item.href} class="px-4 py-2 text-2xl font-medium transition hover:text-yellow-300"> <!-- Adjusted font size and hover color -->
+                    <a href={item.href} class="block px-4 py-2 text-xl md:text-2xl font-medium transition hover:text-yellow-300">
                         {item.linkText}
                     </a>
                 </li>
@@ -38,4 +44,39 @@ nav a:hover {
     text-decoration: underline; /* Added underline on hover */
     opacity: 0.8; /* Added opacity transition on hover */
 }
+
+@media (max-width: 768px) {
+    #nav-menu {
+        display: none; /* Hide the menu initially */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 59, 111, 0.95);
+        z-index: 50;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    #nav-menu.show {
+        display: flex; /* Show the menu when the button is clicked */
+    }
+
+    #menu-button {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    #menu-button {
+        display: none;
+    }
+}
 </style>
+
+<script>
+document.getElementById('menu-button').addEventListener('click', () => {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('show');
+});
+</script>
