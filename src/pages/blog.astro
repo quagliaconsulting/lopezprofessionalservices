@@ -4,40 +4,100 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Blog - Lopez Professional Services">
     <!-- Blog Content -->
-    <section class="blog-content p-8 relative">
+    <section class="blog-content p-8 relative" style="background-image: url('https://source.unsplash.com/random/1600x900?blog'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
         <div class="container mx-auto relative z-10">
             <h2 class="text-3xl font-bold mb-6 text-white">Blog</h2>
-            <article class="mb-8">
-                <h3 class="text-xl mb-2 text-white">Home Improvement Tips</h3>
-                <p class="text-white">Here are some home improvement tips to keep your home looking its best...</p>
-                <a href="#" class="text-blue-500">Read more</a>
-            </article>
-            <article class="mb-8">
-                <h3 class="text-xl mb-2 text-white">Latest Trends in Home Design</h3>
-                <p class="text-white">Stay up-to-date with the latest trends in home design...</p>
-                <a href="#" class="text-blue-500">Read more</a>
-            </article>
-            <article>
-                <h3 class="text-xl mb-2 text-white">DIY Projects for Homeowners</h3>
-                <p class="text-white">Explore these DIY projects that can enhance your living space...</p>
-                <a href="#" class="text-blue-500">Read more</a>
-            </article>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <article class="p-6 bg-white bg-opacity-90 shadow-lg rounded-lg hover:shadow-xl transition-shadow mb-8">
+                    <h3 class="text-xl mb-2 text-black">Home Improvement Tips</h3>
+                    <p class="text-black">Here are some home improvement tips to keep your home looking its best...</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-700 underline">Read more</a>
+                </article>
+                <article class="p-6 bg-white bg-opacity-90 shadow-lg rounded-lg hover:shadow-xl transition-shadow mb-8">
+                    <h3 class="text-xl mb-2 text-black">Latest Trends in Home Design</h3>
+                    <p class="text-black">Stay up-to-date with the latest trends in home design...</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-700 underline">Read more</a>
+                </article>
+                <article class="p-6 bg-white bg-opacity-90 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl mb-2 text-black">DIY Projects for Homeowners</h3>
+                    <p class="text-black">Explore these DIY projects that can enhance your living space...</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-700 underline">Read more</a>
+                </article>
+            </div>
         </div>
     </section>
 
     <!-- Customer Testimonials -->
-    <section class="testimonials p-8 bg-gray-200">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold mb-6">Customer Testimonials</h2>
-            <blockquote class="p-6 bg-white shadow-md mb-6 rounded-md text-black">
-                <p class="text-lg italic">"Lopez Professional Services transformed our home! Their attention to detail is unmatched."</p>
-                <cite class="block mt-4 text-right text-lg font-semibold">— Happy Customer</cite>
-            </blockquote>
-            <blockquote class="p-6 bg-white shadow-md rounded-md text-black">
-                <p class="text-lg italic">"The team was professional, efficient, and delivered exactly what we wanted. Highly recommend!"</p>
-                <cite class="block mt-4 text-right text-lg font-semibold">— Satisfied Client</cite>
-            </blockquote>
+    <section class="testimonials p-8 bg-gray-200 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-3xl font-bold mb-6 text-white">Customer Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <blockquote class="p-6 bg-white shadow-lg rounded-lg text-black transition-transform transform hover:scale-105">
+                    <p class="text-lg italic">"Lopez Professional Services transformed our home! Their attention to detail is unmatched."</p>
+                    <cite class="block mt-4 text-right text-lg font-semibold">— Happy Customer</cite>
+                </blockquote>
+                <blockquote class="p-6 bg-white shadow-lg rounded-lg text-black transition-transform transform hover:scale-105">
+                    <p class="text-lg italic">"The team was professional, efficient, and delivered exactly what we wanted. Highly recommend!"</p>
+                    <cite class="block mt-4 text-right text-lg font-semibold">— Satisfied Client</cite>
+                </blockquote>
+            </div>
         </div>
     </section>
+    
+    <style>
+    .testimonials {
+        position: relative;
+    }
+    
+    .testimonials::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+    
+    blockquote {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    blockquote:hover {
+        transform: scale(1.05);
+    }
+    </style>
+    
 </Layout>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+.blog-content {
+    position: relative;
+}
+
+.blog-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+article {
+    transition: transform 0.3s ease-in-out;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+</style>

@@ -1,5 +1,4 @@
 ---
-// Header.astro
 import Logo from '../components/Logo.astro';
 
 const navItems = [
@@ -12,20 +11,20 @@ const navItems = [
 ];
 ---
 
-<nav class="bg-[#003b6f] bg-opacity-75 text-white p-4 w-full"> <!-- Updated background color -->
+<nav class="bg-[#003b6f] bg-opacity-75 text-white p-4 w-full top-0 z-50"> <!-- Added fixed positioning -->
     <div class="container mx-auto flex justify-between items-center">
         <a href="/" class="flex items-center">
             <Logo />
-            <div class="ml-2 text-2xl font-bold tracking-tight text-left">
+            <div class="ml-2 text-4xl font-bold tracking-tight text-left"> <!-- Adjusted text size -->
                 <span class="block">Lopez</span>
                 <span class="block">Professional</span>
                 <span class="block">Services</span>
             </div>
         </a>
-        <ul class="flex space-x-8 ml-4"> <!-- Increased spacing and moved to the left -->
+        <ul class="flex space-x-6 ml-4"> <!-- Adjusted spacing -->
             {navItems.map((item) => (
                 <li>
-                    <a href={item.href} class="px-4 py-2 text-2xl font-bold underline transition hover:opacity-80"> <!-- Updated padding, font size, and font weight -->
+                    <a href={item.href} class="px-4 py-2 text-2xl font-medium transition hover:text-yellow-300"> <!-- Adjusted font size and hover color -->
                         {item.linkText}
                     </a>
                 </li>
@@ -33,3 +32,10 @@ const navItems = [
         </ul>
     </div>
 </nav>
+
+<style>
+nav a:hover {
+    text-decoration: underline; /* Added underline on hover */
+    opacity: 0.8; /* Added opacity transition on hover */
+}
+</style>

@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="About Us - Lopez Professional Services">
     <!-- Company Story -->
-    <section class="company-story p-8 relative">
+    <section class="company-story p-8 relative" style="background-image: url('https://source.unsplash.com/random/1600x900?construction'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
         <div class="container mx-auto relative z-10">
             <h2 class="text-3xl font-bold mb-6 text-white">Our Story</h2>
@@ -12,25 +12,83 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <!-- Image of Brothers Working -->
+    <!-- Image of Cousins Working -->
     <section class="brothers-image p-8">
         <div class="container mx-auto">
-            <img src="/cousins.png" alt="Brothers working together" class="w-full h-auto rounded shadow-md">
+            <img src="/cousins.png" alt="Cousins working together" class="w-full h-auto rounded shadow-lg">
         </div>
     </section>
 
     <!-- Customer Testimonials -->
-    <section class="testimonials p-8 bg-gray-200">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold mb-6">Customer Testimonials</h2>
-            <blockquote class="p-6 bg-white shadow-md mb-6 rounded-md text-black">
-                <p class="text-lg italic">"Lopez Professional Services transformed our home! Their attention to detail is unmatched."</p>
-                <cite class="block mt-4 text-right text-lg font-semibold">— Happy Customer</cite>
-            </blockquote>
-            <blockquote class="p-6 bg-white shadow-md rounded-md text-black">
-                <p class="text-lg italic">"The team was professional, efficient, and delivered exactly what we wanted. Highly recommend!"</p>
-                <cite class="block mt-4 text-right text-lg font-semibold">— Satisfied Client</cite>
-            </blockquote>
+    <section class="testimonials p-8 bg-gray-200 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-3xl font-bold mb-6 text-white">Customer Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <blockquote class="p-6 bg-white shadow-lg rounded-lg text-black transition-transform transform hover:scale-105">
+                    <p class="text-lg italic">"Lopez Professional Services transformed our home! Their attention to detail is unmatched."</p>
+                    <cite class="block mt-4 text-right text-lg font-semibold">— Happy Customer</cite>
+                </blockquote>
+                <blockquote class="p-6 bg-white shadow-lg rounded-lg text-black transition-transform transform hover:scale-105">
+                    <p class="text-lg italic">"The team was professional, efficient, and delivered exactly what we wanted. Highly recommend!"</p>
+                    <cite class="block mt-4 text-right text-lg font-semibold">— Satisfied Client</cite>
+                </blockquote>
+            </div>
         </div>
     </section>
+    
+    <style>
+    .testimonials {
+        position: relative;
+    }
+    
+    .testimonials::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+    
+    blockquote {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    blockquote:hover {
+        transform: scale(1.05);
+    }
+    </style>
+    
 </Layout>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+.company-story {
+    position: relative;
+}
+
+.company-story::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.brothers-image img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.brothers-image img:hover {
+    transform: scale(1.05);
+}
+</style>

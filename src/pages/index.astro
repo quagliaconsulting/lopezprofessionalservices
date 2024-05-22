@@ -29,31 +29,92 @@ const description = "Lopez Professional Services offers quality painting, remode
     </section>
 
     <!-- Introduction (Empty) -->
-    <section class="intro p-8">
-        <div class="container mx-auto">
+    <!-- <section class="intro p-8"> -->
+        <!-- <div class="container mx-auto"> -->
             <!-- Placeholder for future content -->
-        </div>
-    </section>
+        <!-- </div> -->
+    <!-- </section> -->
 
     <!-- Services Overview -->
-    <section class="services p-8 bg-gray-200 bg-opacity-50 relative">
+    <section class="services p-8 bg-gray-200 bg-opacity-50 relative" style="background-image: url('https://source.unsplash.com/random/1600x900?services'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
         <div class="container mx-auto relative z-10">
             <h2 class="text-2xl font-bold sm:text-3xl mb-4 text-white">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <a href="/services" class="service-card p-4 bg-white shadow-md hover:shadow-lg transition-shadow">
+                <a href="/services" class="service-card p-4 bg-white bg-opacity-90 shadow-lg rounded-lg hover:shadow-xl transition-transform transform hover:scale-105">
                     <h3 class="text-xl font-bold sm:text-2xl mb-2 text-black">Painting</h3>
                     <p class="text-black">High-quality interior and exterior painting services.</p>
                 </a>
-                <a href="/services" class="service-card p-4 bg-white shadow-md hover:shadow-lg transition-shadow">
+                <a href="/services" class="service-card p-4 bg-white bg-opacity-90 shadow-lg rounded-lg hover:shadow-xl transition-transform transform hover:scale-105">
                     <h3 class="text-xl font-bold sm:text-2xl mb-2 text-black">Remodeling</h3>
                     <p class="text-black">Expert remodeling services to transform your space.</p>
                 </a>
-                <a href="/services" class="service-card p-4 bg-white shadow-md hover:shadow-lg transition-shadow">
+                <a href="/services" class="service-card p-4 bg-white bg-opacity-90 shadow-lg rounded-lg hover:shadow-xl transition-transform transform hover:scale-105">
                     <h3 class="text-xl font-bold sm:text-2xl mb-2 text-black">More Services</h3>
                     <p class="text-black">Explore our full range of professional services.</p>
                 </a>
             </div>
         </div>
     </section>
+    
+    <style>
+    .services {
+        position: relative;
+    }
+    
+    .services::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+    
+    .service-card {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .service-card:hover {
+        transform: scale(1.05);
+    }
+    </style>
+    
 </Layout>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+section {
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+}
+
+section:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+}
+</style>

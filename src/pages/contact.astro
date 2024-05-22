@@ -4,56 +4,134 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Contact Us - Lopez Professional Services">
     <!-- Contact Form -->
-    <section class="contact-form p-8 relative">
+    <section class="contact-form p-8 relative" style="background-image: url('https://source.unsplash.com/random/1600x900?contact'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
         <div class="container mx-auto relative z-10">
             <h2 class="text-3xl font-bold mb-6 text-white">Contact Us</h2>
             <form action="#" method="POST" class="bg-white p-6 shadow-md rounded-md">
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700">Name:</label>
-                    <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded">
+                    <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded focus:border-blue-500 focus:ring-2 focus:ring-blue-500">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700">Email:</label>
-                    <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded">
+                    <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded focus:border-blue-500 focus:ring-2 focus:ring-blue-500">
                 </div>
                 <div class="mb-4">
                     <label for="message" class="block text-gray-700">Message:</label>
-                    <textarea id="message" name="message" class="w-full p-2 border border-gray-300 rounded"></textarea>
+                    <textarea id="message" name="message" class="w-full p-2 border border-gray-300 rounded focus:border-blue-500 focus:ring-2 focus:ring-blue-500"></textarea>
                 </div>
-                <button type="submit" class="bg-blue-900 text-white p-2 rounded">Submit</button>
+                <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition-colors">Submit</button>
             </form>
         </div>
     </section>
 
     <!-- Contact Details -->
-    <section class="contact-details p-8 bg-gray-200">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-            <p class="text-xl">Phone: <a href="tel:+1234567890" class="text-blue-900">+1 (234) 567-890</a></p>
-            <p class="text-xl">Email: <a href="mailto:info@lopezservices.com" class="text-blue-900">info@lopezservices.com</a></p>
+    <section class="contact-details p-8 bg-gray-200 bg-opacity-90 relative" style="background-image: url('https://source.unsplash.com/random/1600x900?contact'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-3xl font-bold mb-6 text-white">Get in Touch</h2>
+            <p class="text-xl text-white mb-4">Phone: <a href="tel:+1234567890" class="text-blue-500 hover:text-blue-700">+1 (234) 567-890</a></p>
+            <p class="text-xl text-white">Email: <a href="mailto:info@lopezservices.com" class="text-blue-500 hover:text-blue-700">info@lopezservices.com</a></p>
         </div>
     </section>
+    
+    <style>
+    .contact-details {
+        position: relative;
+    }
+    
+    .contact-details::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+    </style>
+    
 
     <!-- Google Maps -->
-    <section class="map p-8">
-        <div class="container mx-auto">
-            <div id="map" class="w-full h-64 bg-gray-300"></div>
-        </div>
-    </section>
+    <!-- <section class="map p-8"> -->
+        <!-- <div class="container mx-auto"> -->
+            <!-- <div id="map" class="w-full h-64 bg-gray-300 rounded shadow-md"></div> -->
+        <!-- </div> -->
+    <!-- </section> -->
 
     <!-- Customer Testimonials -->
-    <section class="testimonials p-8 bg-gray-200">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold mb-6">Customer Testimonials</h2>
-            <blockquote class="p-6 bg-white shadow-md mb-6 rounded-md text-black">
-                <p class="text-lg italic">"Lopez Professional Services transformed our home! Their attention to detail is unmatched."</p>
-                <cite class="block mt-4 text-right text-lg font-semibold">— Happy Customer</cite>
-            </blockquote>
-            <blockquote class="p-6 bg-white shadow-md rounded-md text-black">
-                <p class="text-lg italic">"The team was professional, efficient, and delivered exactly what we wanted. Highly recommend!"</p>
-                <cite class="block mt-4 text-right text-lg font-semibold">— Satisfied Client</cite>
-            </blockquote>
+    <section class="testimonials p-8 bg-gray-200 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Add overlay for better text contrast -->
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-3xl font-bold mb-6 text-white">Customer Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <blockquote class="p-6 bg-white shadow-lg rounded-lg text-black transition-transform transform hover:scale-105">
+                    <p class="text-lg italic">"Lopez Professional Services transformed our home! Their attention to detail is unmatched."</p>
+                    <cite class="block mt-4 text-right text-lg font-semibold">— Happy Customer</cite>
+                </blockquote>
+                <blockquote class="p-6 bg-white shadow-lg rounded-lg text-black transition-transform transform hover:scale-105">
+                    <p class="text-lg italic">"The team was professional, efficient, and delivered exactly what we wanted. Highly recommend!"</p>
+                    <cite class="block mt-4 text-right text-lg font-semibold">— Satisfied Client</cite>
+                </blockquote>
+            </div>
         </div>
     </section>
+    
+    <style>
+    .testimonials {
+        position: relative;
+    }
+    
+    .testimonials::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+    
+    blockquote {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    blockquote:hover {
+        transform: scale(1.05);
+    }
+    </style>
+    
 </Layout>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+.contact-form {
+    position: relative;
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+form input, form textarea {
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form button:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease-in-out;
+}
+</style>
