@@ -22,10 +22,10 @@ const navItems = [
                 <span class="block">Services</span>
             </div>
         </a>
-        <ul class="flex space-x-4">
+        <ul class="flex space-x-8 ml-4"> <!-- Increased spacing and moved to the left -->
             {navItems.map((item) => (
                 <li>
-                    <a href={item.href} class="px-5 py-3 text-lg font-bold underline transition hover:opacity-80"> <!-- Updated padding, font size, and font weight -->
+                    <a href={item.href} class="px-4 py-2 text-2xl font-bold underline transition hover:opacity-80"> <!-- Updated padding, font size, and font weight -->
                         {item.linkText}
                     </a>
                 </li>
